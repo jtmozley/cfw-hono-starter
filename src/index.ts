@@ -1,11 +1,7 @@
 import { Hono } from "hono";
 import test from "./hello";
 
-export type Bindings = {
-  HELLO: string;
-};
-
-const app = new Hono<{ Bindings: Bindings }>();
+const app = new Hono<{ Bindings: CloudflareBindings }>();
 
 app.get("/", (c) => c.text("Hello Hono!"));
 
